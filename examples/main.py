@@ -8,8 +8,8 @@ import simpleaudio as sa
 #非同期でインポート
 pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="thread")
 def talkinit():
-    from onnx_talksoft import TsukuyomichanTalksoft
-    return TsukuyomichanTalksoft(model_version='v.1.2.0')
+    from tsukuyomichan_talksoft import onnx_talksoft
+    return onnx_talksoft.TsukuyomichanTalksoft(model_version='v.1.2.0')
 future = pool.submit(talkinit)
 # config
 MAX_WAV_VALUE = 25000
